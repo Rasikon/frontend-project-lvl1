@@ -1,3 +1,4 @@
 #!/usr/bin/env node
-import {name} from '..';
+import { name } from '..';
+
 console.log(`Hello, ${name}`);
