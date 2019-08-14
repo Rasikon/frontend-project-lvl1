@@ -30,7 +30,7 @@ export const question = () => {
     const answer = readlineSync.question('Your answer:');
     counter += 1;
     if (number3 === Number(answer)) {
-      console.log('Correct!')
+      console.log('Correct!');
     } else {
       console.log(`${answer} is wrong answer ;(. Correct answer was ${number3}`);
       console.log(`Let's try again, ${name}!`);
