@@ -4,3 +4,4 @@
 [![Build Status](https://travis-ci.org/Rasikon/frontend-project-lvl1.svg?branch=master)](https://travis-ci.org/Rasikon/frontend-project-lvl1)
 <a href="https://asciinema.org/a/xM2dOgzJ87Fnfzfsq36DjeXMu" target="_blank"><img src="https://asciinema.org/a/xM2dOgzJ87Fnfzfsq36DjeXMu.svg" /></a>
 <a href="https://asciinema.org/a/9ZCoIVHBBWEGHvpNQGybWJuFs" target="_blank"><img src="https://asciinema.org/a/9ZCoIVHBBWEGHvpNQGybWJuFs.svg" /></a>
+<a href="https://asciinema.org/a/dQg3bIlerg89YWQMzEbfAIdaH" target="_blank"><img src="https://asciinema.org/a/dQg3bIlerg89YWQMzEbfAIdaH.svg" /></a>
