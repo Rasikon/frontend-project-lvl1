@@ -2,7 +2,7 @@ import readlineSync from 'readline-sync';
 
 export const welcome = () => {
   console.log('Welcome to the Brain Games!');
-  console.log("Find the greatest common divisor of given numbers.");
+  console.log('Find the greatest common divisor of given numbers.');
   console.log('');
 };
 export const greeting = () => {
@@ -19,20 +19,20 @@ export const question = () => {
     const number = Math.floor(Math.random() * (100 - 1)) + 1;
     const number2 = Math.floor(Math.random() * (100 - 1)) + 1;
     console.log(`Question: ${number} ${number2}`);
-    if (number < number2){
-        for(let i = number; number > 0; i -= 1){
-            if (number % i === 0 && number2 % i === 0){
-                nod = i;
-                break;
-            }
+    if (number < number2) {
+      for (let j = number; number > 0; j -= 1) {
+        if (number % j === 0 && number2 % j === 0) {
+          nod = j;
+          break;
         }
-    } else if (number > number2){
-        for(let i = number2; number2 > 0; i -= 1){
-            if (number2 % i === 0 && number % i === 0){
-                nod = i;
-                break;
-            }
+      }
+    } else if (number > number2) {
+      for (let j = number2; number2 > 0; j -= 1) {
+        if (number2 % j === 0 && number % j === 0) {
+          nod = j;
+          break;
         }
+      }
     }
     const answer = readlineSync.question('Your answer:');
     counter += 1;
