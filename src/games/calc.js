@@ -1,41 +1,31 @@
-import readlineSync from 'readline-sync';
+import { welcome, contextGames } from '..';
 
-export const welcome = () => {
-  console.log('Welcome to the Brain Games!');
-  console.log('What is the result of the expression?');
-  console.log('');
-};
-export const greeting = () => {
-  const name = readlineSync.question('May I have your name?');
-  console.log(`Hello, ${name}!`);
-  console.log('');
-  return name;
-};
-export const question = () => {
-  const name = greeting();
-  const str = '+-*';
-  let counter = 0;
-  for (let i = 0; i < 3; i += 1) {
-    const number = Math.floor(Math.random() * (100 - 1)) + 1;
-    const number2 = Math.floor(Math.random() * (100 - 1)) + 1;
-    let number3 = 0;
-    if (str[i] === '+') {
-      number3 = number + number2;
-    } else if (str[i] === '-') {
-      number3 = number - number2;
-    } else if (str[i] === '*') {
-      number3 = number * number2;
-    }
-    console.log(`Question: ${number} ${str[i]} ${number2}`);
-    const answer = readlineSync.question('Your answer:');
-    counter += 1;
-    if (number3 === Number(answer)) {
-      console.log('Correct!');
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${number3}`);
-      console.log(`Let's try again, ${name}!`);
-      return;
-    }
+const headQuestion = 'What is the result of the expression?';
+const str = '+-*';
+const generateNumber = () => Math.floor(Math.random() * (100 - 1)) + 1;
+const generateOperator = (string) => string[Math.floor(Math.random() * (3 - 0)) + 0];
+
+const calculation = (number1, number2, operator) => {
+  if (operator === '+') {
+    return number1 + number2;
+  } if (operator === '-') {
+    return number1 - number2;
+  } if (operator === '*') {
+    return number1 * number2;
   }
-  if (counter === 3) console.log(`Congratulations, ${name}!`);
+  return null;
+};
+
+const answerTask = () => {
+  const number1 = generateNumber();
+  const number2 = generateNumber();
+  const operator = generateOperator(str);
+  const question = `${number1} ${operator} ${number2}`;
+  const answer = String(calculation(number1, number2, operator));
+  const array = [question, answer];
+  return array;
+};
+export default () => {
+  welcome(headQuestion);
+  contextGames(answerTask);
 };
