@@ -1,7 +1,7 @@
-import { welcome, contextGames } from '..';
+import startGame from '../index';
+import generateNumber from '../generateNumber';
 
-const headQuestion = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-const generateNumber = () => Math.floor(Math.random() * (500 - 1)) + 1;
+const gameTask = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const calculation = (number) => {
   let isPrime = 'no';
@@ -16,16 +16,13 @@ const calculation = (number) => {
   }
   return isPrime;
 };
-const answerTask = () => {
+const createGameplay = () => {
   const number = generateNumber();
-  const question = `${number}`;
+  const question = number;
   const answer = calculation(number);
-  const array = [question, answer];
-  return array;
+  const dataGame = [question, answer];
+  return dataGame;
 };
 
 
-export default () => {
-  welcome(headQuestion);
-  contextGames(answerTask);
-};
+export default () => startGame(gameTask, createGameplay);

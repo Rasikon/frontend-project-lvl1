@@ -1,37 +1,23 @@
-import { welcome, contextGames } from '..';
+import startGame from '../index';
+import generateNumber from '../generateNumber';
 
-const headQuestion = 'Find the greatest common divisor of given numbers.';
-const generateNumber = () => Math.floor(Math.random() * (100 - 1)) + 1;
+const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const calculation = (number1, number2) => {
-  let nod = 0;
-  if (number1 < number2) {
-    for (let j = number1; number1 > 0; j -= 1) {
-      if (number1 % j === 0 && number2 % j === 0) {
-        nod = j;
-        break;
-      }
-    }
-  } else if (number1 > number2) {
-    for (let j = number2; number2 > 0; j -= 1) {
-      if (number2 % j === 0 && number1 % j === 0) {
-        nod = j;
-        break;
-      }
-    }
+  if (number2 > 0) {
+    const number3 = number1 % number2;
+    return calculation(number2, number3);
   }
-  return nod;
+  return Math.abs(number1);
 };
-const answerTask = () => {
+
+const createGameplay = () => {
   const number1 = generateNumber();
   const number2 = generateNumber();
   const question = `${number1} ${number2}`;
   const answer = String(calculation(number1, number2));
-  const array = [question, answer];
-  return array;
+  const dataGame = [question, answer];
+  return dataGame;
 };
 
-export default () => {
-  welcome(headQuestion);
-  contextGames(answerTask);
-};
+export default () => startGame(gameTask, createGameplay);

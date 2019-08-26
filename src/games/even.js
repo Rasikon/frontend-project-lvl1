@@ -1,19 +1,15 @@
-import { welcome, contextGames } from '..';
+import startGame from '../index';
+import generateNumber from '../generateNumber';
 
-const headQuestion = "Answer 'yes' if number even otherwise answer 'no'.";
-const generateNumber = () => Math.floor(Math.random() * (100 - 1)) + 1;
+const gameTask = "Answer 'yes' if number even otherwise answer 'no'.";
 
-const calculation = (number) => ((number % 2 === 0) ? 'yes' : 'no');
+const isEven = (number) => ((number % 2 === 0));
 
-const answerTask = () => {
-  const number = generateNumber();
-  const question = `${number}`;
-  const answer = calculation(number);
-  const array = [question, answer];
-  return array;
+const createGameplay = () => {
+  const question = generateNumber();
+  const answer = isEven(question) ? 'yes' : 'no';
+  const dataGame = [question, answer];
+  return dataGame;
 };
 
-export default () => {
-  welcome(headQuestion);
-  contextGames(answerTask);
-};
+export default () => startGame(gameTask, createGameplay);
