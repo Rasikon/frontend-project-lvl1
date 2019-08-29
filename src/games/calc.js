@@ -1,9 +1,8 @@
-import startGame from '../index';
+import playGame from '../index';
 import generateNumber from '../generateNumber';
 
 const gameTask = 'What is the result of the expression?';
-const str = '+-*';
-const generateOperator = (string) => string[Math.floor(Math.random() * (str.length - 0)) + 0];
+const operators = ['+', '-', '*'];
 
 const calculation = (number1, number2, operator) => {
   switch (operator) {
@@ -18,13 +17,14 @@ const calculation = (number1, number2, operator) => {
   }
 };
 
-const createGameplay = () => {
+const generateRound = () => {
   const number1 = generateNumber();
   const number2 = generateNumber();
-  const operator = generateOperator(str);
+  const operator = operators[generateNumber(0, operators.length)];
   const question = `${number1} ${operator} ${number2}`;
   const answer = String(calculation(number1, number2, operator));
   const dataGame = [question, answer];
   return dataGame;
 };
-export default () => startGame(gameTask, createGameplay);
+
+export default () => playGame(gameTask, generateRound);

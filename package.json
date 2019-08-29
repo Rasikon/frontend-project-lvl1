@@ -1,7 +1,7 @@
 {
   "name": "hexlet",
   "version": "1.0.0",
-  "description": "",
+  "description": "A package contains games",
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
     "brain-even": "dist/bin/brain-even.js",
@@ -18,7 +18,7 @@
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
-  "author": "",
+  "author": "Ivan Redreev <redreev.ivan@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.5.5",
@@ -33,5 +33,9 @@
   },
   "dependencies": {
     "readline-sync": "^1.4.10"
-  }
+  },
+  "keywords": [
+    "frontend-project-lvl1",
+    "brain-games"
+  ]
 }

@@ -1,15 +1,15 @@
-import startGame from '../index';
+import playGame from '../index';
 import generateNumber from '../generateNumber';
 
 const gameTask = "Answer 'yes' if number even otherwise answer 'no'.";
 
-const isEven = (number) => ((number % 2 === 0));
+const isEven = (number) => number % 2 === 0;
 
-const createGameplay = () => {
+const generateRound = () => {
   const question = generateNumber();
   const answer = isEven(question) ? 'yes' : 'no';
   const dataGame = [question, answer];
   return dataGame;
 };
 
-export default () => startGame(gameTask, createGameplay);
+export default () => playGame(gameTask, generateRound);

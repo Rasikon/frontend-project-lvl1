@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import gameStart from '../games/gcd';
+import playGame from '../games/gcd';
 
-gameStart();
+playGame();
