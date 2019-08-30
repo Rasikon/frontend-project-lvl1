@@ -1,4 +1,4 @@
-import playGame from '../index';
+import playGame from '..';
 import generateNumber from '../generateNumber';
 
 const gameTask = 'What is the result of the expression?';
@@ -20,7 +20,7 @@ const calculation = (number1, number2, operator) => {
 const generateRound = () => {
   const number1 = generateNumber();
   const number2 = generateNumber();
-  const operator = operators[generateNumber(0, operators.length)];
+  const operator = operators[generateNumber(0, operators.length - 1)];
   const question = `${number1} ${operator} ${number2}`;
   const answer = String(calculation(number1, number2, operator));
   const dataGame = [question, answer];

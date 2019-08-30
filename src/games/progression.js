@@ -1,4 +1,4 @@
-import playGame from '../index';
+import playGame from '..';
 import generateNumber from '../generateNumber';
 
 const gameTask = 'What number is missing in the progression?';
@@ -15,9 +15,9 @@ const generateProgression = (firstElement, difference, length) => {
 const generateRound = () => {
   const firstElement = generateNumber();
   const difference = generateNumber();
-  const missElement = generateNumber(0, 10);
-  const progression = generateProgression(firstElement, difference, progressionLength);
-  const answer = `${progression.splice(missElement, 1, '..')}`;
+  const missingElementIndex = generateNumber(0, progressionLength - 1);
+  const progression = generateProgression(firstElement, difference, progressionLength - 1);
+  const answer = `${progression.splice(missingElementIndex, 1, '..')}`;
   const question = progression.join(' ');
   const dataGame = [question, answer];
   return dataGame;

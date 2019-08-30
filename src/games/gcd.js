@@ -1,12 +1,12 @@
-import playGame from '../index';
+import playGame from '..';
 import generateNumber from '../generateNumber';
 
 const gameTask = 'Find the greatest common divisor of given numbers.';
 
 const calculationGcd = (number1, number2) => {
   if (number2 > 0) {
-    const number3 = number1 % number2;
-    return calculationGcd(number2, number3);
+    const restDivision = number1 % number2;
+    return calculationGcd(number2, restDivision);
   }
   return Math.abs(number1);
 };

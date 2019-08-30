@@ -1,4 +1,4 @@
-import playGame from '../index';
+import playGame from '..';
 import generateNumber from '../generateNumber';
 
 const gameTask = "Answer 'yes' if number even otherwise answer 'no'.";
